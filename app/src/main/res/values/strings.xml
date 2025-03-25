@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">calculatorimc</string>
+    <string name="title_imc">Meu IMC</string>
+    <string name="hint_email">E-mail</string>
+    <string name="hint_password">Senha</string>
+    <string name="btn_login">Entrar</string>
+    <string name="hint_weight">Peso (kg)</string>
+    <string name="hint_height">Altura (m)</string>
+    <string name="btn_calculate">Calcular IMC</string>
+    <string name="logo_image_description">App logo</string>
+    <string name="btn_signup">Cadastro</string>
+</resources>

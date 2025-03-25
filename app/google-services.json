@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "632964817295",
+    "project_id": "calcimc-3c78e",
+    "storage_bucket": "calcimc-3c78e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632964817295:android:ab6381043e82885548abfa",
+        "android_client_info": {
+          "package_name": "com.example.calculatorimc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu5Rh9rMpJ5RFcZdjKYYLrkIC_HZXA2sY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
