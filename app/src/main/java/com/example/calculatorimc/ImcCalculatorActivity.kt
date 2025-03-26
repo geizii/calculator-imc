@@ -3,6 +3,8 @@ package com.example.calculatorimc
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import java.text.NumberFormat
+import java.util.Locale
 
 class ImcCalculatorActivity : AppCompatActivity() {
 
@@ -22,8 +24,6 @@ class ImcCalculatorActivity : AppCompatActivity() {
         calculateButton = findViewById(R.id.calculateButton)
         resultTextView = findViewById(R.id.resultTextView)
 
-        // (Opcional) Recupera algum dado passado pela Intent, se necessário
-        val email = intent.getStringExtra("EMAIL") ?: ""
 
         // Configura o listener para o botão de calcular
         calculateButton.setOnClickListener {
@@ -62,7 +62,9 @@ class ImcCalculatorActivity : AppCompatActivity() {
 
     private fun showResult(imc: Float) {
         // Formata o valor do IMC para uma casa decimal
-        val imcFormatted = String.format("%.1f", imc)
+        val imcFormatter = NumberFormat.getNumberInstance(Locale("pt", "BR"))
+        imcFormatter.maximumFractionDigits = 1
+        val imcFormatted = imcFormatter.format(imc)
 
         // Determina a categoria do IMC e a mensagem
         val message = when {

@@ -8,15 +8,9 @@
     android:padding="16dp"
     tools:context=".ImcCalculatorActivity">
 
+
+
     <!-- Título da tela -->
-
-    <!-- Campo para digitar o peso -->
-
-    <!-- Campo para digitar a altura -->
-
-    <!-- Botão para realizar o cálculo -->
-
-    <!-- TextView para exibir o resultado -->
 
     <TextView
         android:id="@+id/titleTextView"
@@ -30,11 +24,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Campo para digitar o peso -->
     <EditText
         android:id="@+id/weightEditText"
-        android:layout_width="0dp"
+        android:layout_width="373dp"
         android:layout_height="48dp"
         android:layout_marginTop="88dp"
+        android:autofillHints=""
         android:hint="@string/hint_weight"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,29 +38,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleTextView" />
 
+    <!-- Campo para digitar a altura -->
+
     <EditText
         android:id="@+id/heightEditText"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
+        android:layout_width="372dp"
+        android:layout_height="51dp"
         android:layout_marginTop="32dp"
+        android:autofillHints=""
         android:hint="@string/hint_height"
         android:inputType="numberDecimal"
+        android:textColor="@color/text_primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/weightEditText" />
 
+
+    <!-- Botão para realizar o cálculo -->
     <Button
         android:id="@+id/calculateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
+        android:backgroundTint="#6200EE"
         android:text="@string/btn_calculate"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/heightEditText" />
 
-
+    <!-- TextView para exibir o resultado -->
     <TextView
         android:id="@+id/resultTextView"
         android:layout_width="0dp"
