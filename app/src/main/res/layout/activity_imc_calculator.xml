@@ -8,15 +8,12 @@
     android:padding="16dp"
     tools:context=".ImcCalculatorActivity">
 
-
-
     <!-- Título da tela -->
-
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="48dp"
         android:text="@string/title_imc"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -29,7 +26,7 @@
         android:id="@+id/weightEditText"
         android:layout_width="373dp"
         android:layout_height="48dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="48dp"
         android:autofillHints=""
         android:hint="@string/hint_weight"
         android:inputType="numberDecimal"
@@ -39,12 +36,11 @@
         app:layout_constraintTop_toBottomOf="@id/titleTextView" />
 
     <!-- Campo para digitar a altura -->
-
     <EditText
         android:id="@+id/heightEditText"
         android:layout_width="372dp"
         android:layout_height="51dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:autofillHints=""
         android:hint="@string/hint_height"
         android:inputType="numberDecimal"
@@ -54,13 +50,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/weightEditText" />
 
-
     <!-- Botão para realizar o cálculo -->
     <Button
         android:id="@+id/calculateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="#6200EE"
         android:text="@string/btn_calculate"
         android:textColor="#FFFFFF"
@@ -73,13 +68,41 @@
         android:id="@+id/resultTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="32dp"
         android:text=""
         android:textSize="16sp"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/calculateButton" />
 
+    <!-- Botão para ver histórico -->
+    <Button
+        android:id="@+id/historyButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#4CAF50"
+        android:text="@string/btn_history"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resultTextView"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <!-- Botão para logout -->
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#FF5722"
+        android:text="@string/btn_logout"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/historyButton"
+        app:layout_constraintWidth_percent="0.8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

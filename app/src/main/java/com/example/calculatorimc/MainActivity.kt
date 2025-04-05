@@ -22,22 +22,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Initialize Firebase
+        // Inicializa o firebase
         FirebaseApp.initializeApp(this)
         auth = FirebaseAuth.getInstance()
 
-        // Initialize views
+        // Inicializa as views
         emailEditText = findViewById(R.id.emailEditText)
         passwordEditText = findViewById(R.id.passwordEditText)
         loginButton = findViewById(R.id.loginButton)
         signUpButton = findViewById(R.id.signUpButton)
 
-        // Login button click listener
+        // Listener do botão de Login
         loginButton.setOnClickListener {
             val email = emailEditText.text.toString().trim()
             val password = passwordEditText.text.toString().trim()
 
-            // Validate input
+            // Validação input
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
@@ -53,35 +53,35 @@ class MainActivity : AppCompatActivity() {
                         startActivity(intent)
                         finish() // Close login activity
                     } else {
-                        // If sign in fails, display a message to the user
-                        Toast.makeText(baseContext, "Autenticação falhou: ${task.exception?.message}",
+                        // Se o login falhar, mostrar a mensagem pro usuário
+                        Toast.makeText(baseContext, "Você não possui um usuário registrado. Cadastre-se e tente novamente.",
                             Toast.LENGTH_SHORT).show()
                     }
                 }
         }
 
-        // Sign Up button click listener
+        // Cadastro button listener
         signUpButton.setOnClickListener {
             val email = emailEditText.text.toString().trim()
             val password = passwordEditText.text.toString().trim()
 
-            // Validate input
+            // Vaalidação Input
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Firebase Authentication Sign Up
+            // Firebase Authentication Cadastro
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                        // Sign up success, navigate to IMC Calculator
+                        // Cadastro feito com sucesso
                         val intent = Intent(this, ImcCalculatorActivity::class.java)
                         intent.putExtra("EMAIL", email)
                         startActivity(intent)
-                        finish() // Close login activity
+                        finish() // Fecha a activity
                     } else {
-                        // If sign up fails, display a message to the user
+                        // Se o cadastro falhar
                         Toast.makeText(baseContext, "Cadastro falhou: ${task.exception?.message}",
                             Toast.LENGTH_SHORT).show()
                     }

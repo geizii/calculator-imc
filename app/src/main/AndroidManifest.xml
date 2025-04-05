@@ -23,6 +23,16 @@
             android:name=".ImcCalculatorActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".HistoryActivity"
+            android:exported="false"
+            android:label="@string/title_activity_history"
+            android:parentActivityName=".ImcCalculatorActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ImcCalculatorActivity" />
+        </activity>
+
     </application>
 
 </manifest>
